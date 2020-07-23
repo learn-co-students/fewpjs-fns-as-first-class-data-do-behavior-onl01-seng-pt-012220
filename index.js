@@ -11,28 +11,19 @@ function handleClick(e) {
 
 /* Write your implementation of greet() */
 function greet(time) {
-  if (time.length == 5) {
-    hour = time.slice(0,2);
-  }else{
-    hour = time.slice(0,1);
-  }
-
-  if (hour<12) {
+  let t = parseInt(time);
+  let greeting = "";
+  if (t<12) {
     greeting = "Good Morning";
-  } else if (hour<17) {
+  } else if (t<17) {
     greeting = "Good Afternoon";
   }else{
     greeting = "Good Evening";
   }
-  
   return greeting;
 }
 /* Write your implementation of displayMessage() */
-function displayMessage() {
-  let b = document.getElementsByTagName('button');
-  b[0].addEventListener('click', function () {
-    let input = document.querySelector('input');
-    let greeting = document.querySelector("#greeting");
-    greeting.textContent = greet(input.value);
-  });
+function displayMessage(text) {
+    let g = document.querySelector('#greeting');
+    g.innerText = text;
 }
